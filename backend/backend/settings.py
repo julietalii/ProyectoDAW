@@ -1,3 +1,15 @@
+import environ
+import os
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Inicializar django-environ
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+
 """
 Django settings for backend project.
 
@@ -75,8 +87,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        #configuracón previa:
+            #'ENGINE': 'django.db.backends.sqlite3',
+            #'NAME': BASE_DIR / 'db.sqlite3',
+
+        #nueva configuración:
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST', default='localhost'),
+        'PORT': env('DB_PORT', default='3306'),
     }
 }
 

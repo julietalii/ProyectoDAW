@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #19-04:
     'reservas',
+    'rest_framework',
+
 
 ]
 

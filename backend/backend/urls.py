@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from reservas.views import ReservarClaseAPIView, ListaClasesAPIView
+
+
+
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/reservar/', ReservarClaseAPIView.as_view(), name='reservar-clase'),
+    path('api/clases/', ListaClasesAPIView.as_view(), name='lista-clases'),
 ]
+
+##########################################
+

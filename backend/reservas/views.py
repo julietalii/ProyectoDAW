@@ -30,4 +30,25 @@ class ReservarClaseAPIView(APIView):
         except Exception as e:
             return Response({'mensaje': f'Error: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+#######################################
+
+class ListaClasesAPIView(APIView):
+    def get(self, request):
+        clases = ClaseYoga.objects.all()
+        datos = []
+
+        for clase in clases:
+            reservas_actuales = clase.reserva_set.count()
+            datos.append({
+                'id': clase.id,
+                'nombre': clase.nombre,
+                'descripcion': clase.descripcion,
+                'fecha': clase.fecha,
+                'hora': clase.hora.strftime('%H:%M'),
+                'cupo_maximo': clase.cupo_maximo,
+                'plazas_ocupadas': reservas_actuales,
+                'plazas_libres': clase.cupo_maximo - reservas_actuales
+            })
+
+        return Response(datos)
 # Create your views here.

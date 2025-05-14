@@ -10,20 +10,21 @@ class ReservarClaseAPIView(APIView):
     def post(self, request):
         try:
             clase_id = request.data.get('clase_id')
-
             clase = ClaseYoga.objects.get(id=clase_id)
-
-            # Simulamos un usuario temporal:
             usuario = User.objects.first()
 
-            # Comprobar si hay plazas
             reservas_actuales = Reserva.objects.filter(clase=clase).count()
             if reservas_actuales >= clase.cupo_maximo:
                 return Response({'mensaje': 'No quedan plazas disponibles'}, status=status.HTTP_400_BAD_REQUEST)
 
-            # Crear reserva
+
+            hora_reserva = request.data.get('hora')
+            if hora_reserva and str(hora_reserva) != clase.hora.strftime("%H:%M"):
+                return Response({'mensaje': 'Hora no coincide con la clase'}, status=status.HTTP_400_BAD_REQUEST)
+
+
             Reserva.objects.create(clase=clase, usuario=usuario)
-            return Response({'mensaje': '¡Reserva hecha con éxito! 🎉'}, status=status.HTTP_201_CREATED)
+            return Response({'mensaje': 'Reserva creada con éxito'}, status=status.HTTP_201_CREATED)
 
         except ClaseYoga.DoesNotExist:
             return Response({'mensaje': 'Clase no encontrada'}, status=status.HTTP_404_NOT_FOUND)
@@ -51,4 +52,18 @@ class ListaClasesAPIView(APIView):
             })
 
         return Response(datos)
+
+
+#######################################
+
+class CancelarReservaAPIView(APIView):
+    def delete(self, request, reserva_id):
+        try:
+            reserva = Reserva.objects.get(id=reserva_id)
+            reserva.delete()
+            return Response({'mensaje': 'Reserva cancelada con éxito.'}, status=status.HTTP_200_OK)
+        except Reserva.DoesNotExist:
+            return Response({'mensaje': 'Reserva no encontrada.'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({'mensaje': f'Error: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 # Create your views here.

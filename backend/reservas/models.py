@@ -6,6 +6,8 @@ class ClaseYoga(models.Model):
     dia = models.CharField(max_length=20)
     hora = models.TimeField()
     cupo_maximo = models.IntegerField()
+    descripcion = models.TextField(blank=True, null=True)
+    fecha = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.nombre} - {self.dia} a las {self.hora}"

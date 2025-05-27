@@ -15,13 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path
-from reservas.views import ReservarClaseAPIView, ListaClasesAPIView, CancelarReservaAPIView
-
-
-
-
-
+from reservas.views import (ReservarClaseAPIView, ListaClasesAPIView, CancelarReservaAPIView, RegistroUsuarioAPIView, LoginAPIView)
 
 
 urlpatterns = [
@@ -29,6 +25,9 @@ urlpatterns = [
     path('api/reservar/', ReservarClaseAPIView.as_view(), name='reservar-clase'),
     path('api/clases/', ListaClasesAPIView.as_view(), name='lista-clases'),
     path('api/cancelar-reserva/<int:reserva_id>/', CancelarReservaAPIView.as_view(), name='cancelar-reserva'),
+    path('api/login/', obtain_auth_token, name='api_token_auth'),
+    path('api/register/', RegistroUsuarioAPIView.as_view(), name='registro'),
+    path('api/login/', LoginAPIView.as_view(), name='login'),
 ]
 
 ##########################################

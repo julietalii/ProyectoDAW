@@ -2,8 +2,10 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import ClaseYoga, Reserva
-from django.contrib.auth.models import User
+from .models import ClaseYoga, Reserva, Profesor
+from rest_framework.authtoken.models import Token
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class ReservarClaseAPIView(APIView):
 
@@ -11,7 +13,8 @@ class ReservarClaseAPIView(APIView):
         try:
             clase_id = request.data.get('clase_id')
             clase = ClaseYoga.objects.get(id=clase_id)
-            usuario = User.objects.first()
+            usuario = request.user
+
 
             reservas_actuales = Reserva.objects.filter(clase=clase).count()
             if reservas_actuales >= clase.cupo_maximo:
@@ -67,5 +70,32 @@ class CancelarReservaAPIView(APIView):
         except Exception as e:
             return Response({'mensaje': f'Error: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+########################
+
+class RegistroUsuarioAPIView(APIView):
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        es_profesor = request.data.get('es_profesor', False)
+
+        if Profesor.objects.filter(username=username).exists():
+            return Response({'error': 'Ese usuario ya existe'}, status=status.HTTP_400_BAD_REQUEST)
+
+        user = Profesor.objects.create_user(username=username, password=password, es_profesor=es_profesor)
+        token, _ = Token.objects.get_or_create(user=user)
+
+        return Response({'mensaje': 'Usuario creado correctamente', 'token': token.key}, status=status.HTTP_201_CREATED)
+#####################
+
+class LoginAPIView(APIView):
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user:
+            token, _ = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key}, status=status.HTTP_200_OK)
+        return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_400_BAD_REQUEST)
 
 # Create your views here.

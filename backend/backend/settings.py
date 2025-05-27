@@ -52,9 +52,18 @@ INSTALLED_APPS = [
     #19-04:
     'reservas',
     'rest_framework',
+    'rest_framework.authtoken',
+
 
 
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,6 +115,8 @@ DATABASES = {
         'PORT': env('DB_PORT', default='3306'),
     }
 }
+
+AUTH_USER_MODEL = 'reservas.Profesor'
 
 
 # Password validation

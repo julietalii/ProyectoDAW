@@ -66,4 +66,6 @@ class CancelarReservaAPIView(APIView):
             return Response({'mensaje': 'Reserva no encontrada.'}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return Response({'mensaje': f'Error: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 # Create your views here.

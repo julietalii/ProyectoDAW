@@ -1,0 +1,146 @@
+.boddyform{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    /* justify-items: center; */
+    border-radius: 20px;
+
+}
+
+
+.img2{
+    height: 50vh;
+}
+
+
+.clarito{
+    height: 60vh;
+    display: grid;
+    align-content: center;
+    justify-items: end;
+    margin-right: 3rem;
+}
+
+label {
+    font-size: 25px;
+    font-weight: bold;
+   
+}
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color:#c1ff70;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
+    transition: 0.5s;
+}
+
+
+
+.elemento{
+
+    margin-bottom: 2rem
+}
+
+.img2{
+    display: grid;
+    justify-items: start;
+    align-items: center;
+}
+
+.imgform{
+    /* visibility: hidden; */
+    display: grid;
+    align-items: center;
+    justify-items: start;
+}
+
+.elemButon{
+    text-align:center;
+    
+}
+
+.mapa{
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-top: 4rem; 
+}
+
+.info{
+    display: grid;
+    grid-template-rows: 33%;
+    justify-content: center;
+    margin: 3rem 0px;
+    grid-template-columns: 100%;
+    
+}
+
+.info_datos{
+    display:grid;
+    grid-template-columns: 40% 60%;
+    margin: 0.5rem 0px;
+    align-items: center; 
+}
+
+.iconfont{
+    margin-right: 2rem;
+    display: grid;
+    justify-content: end;
+    font-size: xxx-large;
+    align-items: center;
+    color: rgb(83, 237, 103);
+
+}
+
+.contenido{
+    font-size:x-large;
+    font-weight: bold;  
+}
+
+.contenido a{
+    text-decoration: none;
+    color:black;
+}
+
+.titulopagina p{
+    text-align: center;
+}
+
+/*responsive quitar foto de formulario*/
+
+@media screen and (max-width: 768px){
+    .boddyform{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .clarito{
+        justify-content: center;
+    }
+
+    .imgform{
+        display:none;
+    }
+
+    iframe{
+        width:90%;
+        height:auto;
+    }
+    
+}

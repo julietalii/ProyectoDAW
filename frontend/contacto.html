@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <!--Letra Comfortaa: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Kablammo&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9a8063d980.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <div id="logo">
+                <a href="./inicio.html">
+                <img src="./imgGeneral/NAMASTELOGO.png" alt="Namaste Logo">
+                </a>
+            </div>
+        
+            <div id="menu">
+                <ul id="menu-ul">
+                    <li class="menu-il"><a href="./inicio.html" >Inicio</a></li>
+                    <li class="menu-il"><a href="./servicios.html" >Servicios</a></li>
+                    <li class="menu-il"><a href="./instalaciones.html" >Instalaciones</a></li>
+                    <li class="menu-il"><a href="./nosotros.html" >Nosotros</a></li>
+                    <li class="menu-il"><a href="#" class="activo">Contacto</a></li>
+                </ul>
+            </div>
+        
+        </div>
+    <div class="titulopagina">
+        <h1>Contacto</h1>
+    </div>
+        <!-- <div id="portada">
+            <video id="imagenportada" width="100%"  autoplay muted loop playsinline>
+                <source src="/26-Prototipo/videoyoga.mp4" type="video/mp4">
+            </video>
+        </div> -->
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d725.222158400273!2d-8.411530522320877!3d43.358440053025355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7c8fad214959%3A0xf0eb173e2d98b67b!2sCentro%20de%20Formaci%C3%B3n%20Profesional%20Afundaci%C3%B3n!5e0!3m2!1ses!2ses!4v1732553946623!5m2!1ses!2ses" width="100%" height="300vh" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+
+        <!--iconos de ubicación: -->
+        <div class="info">
+            <div class="info_datos">
+                <div class="iconfont"><i class="fa-solid fa-location-dot"></i></div>  
+                <div class="contenido"><a href="https://maps.app.goo.gl/C7sPJsR2wWx4Zr19A">C/Ribadavia 4, 15007 A Coruña</a></div>             
+            </div>
+            <div class="info_datos">
+                <div class="iconfont"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <div class="contenido">612345678</div>
+            </div>
+            <div class="info_datos">
+                <div class="iconfont"><i class="fa-regular fa-clock"></i></div>
+                <div class="contenido">L-V: 12:00-20:00
+                    <br>S: 09:00-13:00
+                    <br>D: Cerrado</div>
+            </div>
+            
+        </div>
+       <div class="titulopagina">
+        <p>¿Tienes más dudas?</p>
+        <p>¿Hablamos?</p>
+       </div>
+         <!--iconos de ubicación: -->
+         
+        <!-- F O R M U L A R I O-->
+         <div class="boddyform">
+            <div class="clarito">
+                <form action="contact.php" method="post"> 
+                    <div class="elemento"> 
+                        <label for="name">Nombre</label> 
+                        <input type="text" id="name" name="visitor_name" placeholder="Nombre" pattern="[A-Za-z\s]{3,20}" required> 
+                    </div> 
+                    <div class="elemento"> 
+                        <label for="mobile">Teléfono: </label> 
+                        <input type="email" id="email" name="visitor_email" placeholder="correo@example.com" required> 
+                    </div>  
+                    <div class="elemento"> 
+                        <label for="comments">Comentario: </label> 
+                        <textarea id="comments" name="comments" placeholder="Escribe tu mensaje aquí." required></textarea> 
+                    </div> 
+                    <div class="elemButon" >
+                    <button type="submit" >Enviar</button>    
+                    </div>
+    
+                    
+                </form>
+            </div>
+            <div class="imgform">
+                <img class="img2" src="./img5Contacto/imgFormulario.jpg" alt="">
+            </div>
+         </div>
+        
+        <!-- <img class="fotoform" src="/26-Prototipo/Portada.png" alt="Fondo"> -->
+
+        <!-- F O R M U L A R I O-->
+        <div class="contendormarcadeagua"></div>
+    </div>
+    <div id="piedepagina">
+        <a class="footer" href="loading.html">Aviso legal</a>
+        <a class="footer" href="loading.html">Política de privacidad</a>
+        <a class="footer" href="loading.html">© Namasté </a>
+        <a class="footer" href="loading.html"><div class="footericon"><i class="fa-brands fa-square-instagram icon"></i> @yoganamaste</div></a>
+    </div>
+</body>
+</html>

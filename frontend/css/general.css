@@ -1,0 +1,246 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body{
+    font-family: "Comfortaa", system-ui; /*establecemos el tipo de letra que tendrá el menú*/
+}
+
+#navbar{
+    background: rgb(255, 255, 255);
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 60%;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;   /*va siempre pegado al techo, complementa a sticky*/
+    z-index: 10; /*posiciona la capa del padre delante ESTO ES PARA Q SIEMPRE FUNCIONE EL HOVER */
+    background-color: rgb(255 255 255 / 69%); /* Transparente inicialmente */
+    box-shadow: 4px 4px 4px white;
+
+}
+
+#logo{
+    display: grid;
+    margin-left: 2rem;
+    grid-template-rows: 90%;
+}
+
+
+
+
+
+
+#menu-ul{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.menu-il{
+    display: grid;
+    grid-template-rows: 100%;
+
+    width: 100%;
+    height: 100%;
+}
+
+.menu-il a{
+    text-decoration: none;
+    color: black;
+    display: grid;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menu-il:hover {
+    background-color: #c1ff7075;
+    font-weight: bold;
+}
+
+
+
+
+.menu-il a:hover:not(.activo){
+    color: rgb(83, 237, 103);
+    font-weight: bold;
+    background-color: #ffffff7a;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+
+.menu-il a.activo{
+    color: rgb(83, 237, 103);
+    background-color: #ffffff7a;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+
+/***********************************************/
+
+#piedepagina {
+    background: rgb(255, 255, 255);
+   
+}
+
+
+
+
+#piedepagina{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+    
+}
+
+.footer{
+    color: black;
+    text-decoration: none;
+    height: 12vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(193, 255, 112, 0.451);
+}
+
+
+.footer:hover {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: rgb(83, 237, 103);
+    font-size: larger;
+    transition: 0.5s;
+    
+}
+
+
+/**/
+
+.contendormarcadeagua{
+    width:100%;
+    height:200px;
+    background-image: url(../imgGeneral/bak.png);
+    background-size:150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    font-weight:bold;
+}
+
+/**/
+
+.titulopagina{
+    margin-top: 3rem;
+    font-weight: bold;
+    font-size:x-large;
+}
+
+.titulopagina{
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.titulopagina:hover{
+    color: rgb(83, 237, 103);
+    transition: 0.5s;
+} 
+
+
+.piedepagina i:hover{
+    animation: colornuevo 3s forwards;
+}
+
+@keyframes colornuevo{
+    0%{
+        color:initial;
+    }
+    50%{
+        color:white;
+    }
+    100%{
+        color: pink;
+    }
+}
+
+
+/***********************************************************************/
+
+/* R E S P O N S I V E */
+
+/* @media screen and(max-width:590px){
+    #menu a{
+        color:pink;
+    }
+
+    #menu{
+        display:flex;
+        flex-direction: column;
+    }
+
+    #menu ul{
+        display:flex;
+        flex-direction: column;
+    }
+} */
+
+
+
+/*R E S P O N S I V E: */
+/* @media screen and (max-width: 768px) { */
+    @media screen and (max-width: 899px) {
+    /*navbar: */
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #logo {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #menu-ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .menu-il {
+        width: 100%;
+        text-align: center;
+    }
+
+  
+
+/******* PIE DE PAGINA */
+    #piedepagina {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        padding: 10px 0;
+    }
+}

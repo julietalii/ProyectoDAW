@@ -1,0 +1,56 @@
+body{
+    background-color: rgba(83, 237, 103, 0.63);
+}
+img{
+    width:200px;
+    height:200px;
+}
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;;
+}
+
+a{
+/* color:white; */
+font-size: x-large;
+font-weight: bold;
+color:black;
+
+}
+
+a:hover{
+font-size: xx-large;
+transition:2s;
+}
+
+/**/
+
+.logoanimado {
+        height:400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+.imagen {
+    /* width: 100%; */
+    clip-path: inset(100% 0 0 0); 
+    animation: revelar 5s linear infinite;
+}
+
+@keyframes revelar {
+    from {
+        clip-path: inset(100% 0 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0); 
+    }
+}
+
+.return{
+    text-align: center;
+}

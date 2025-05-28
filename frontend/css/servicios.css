@@ -1,0 +1,30 @@
+/* I M A G E N E S   S E R V I C I O S: */
+.fotos{
+    width: 100%;
+}
+
+.fotos img{
+    width:100%;
+}
+
+
+
+/*p*/
+p{
+    text-align: center;
+    padding: 15px 20px;
+    
+}
+
+
+/*responsive:*/
+@media screen and (max-width: 1220px) {
+
+    .foto1 p{
+        opacity: 0;
+    }
+    .foto1:hover p{
+        opacity: 1;
+        transition:1s;
+    }
+}

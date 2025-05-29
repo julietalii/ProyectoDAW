@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/general.css">
+    <style>
+        /* body{
+           background: linear-gradient(90deg,
+  rgb(189, 252, 204) 0%,    
+  rgb(142, 247, 153) 35%,    
+  rgb(189, 252, 204) 100%    
+);
+display: flex;
+justify-content: center; */
+/* background: linear-gradient(90deg,
+  rgb(255, 236, 210) 0%,
+  rgb(242, 218, 192) 35%,
+    100%); */
+        /* } */
+        /* #loginForm{
+            width:200px;
+            height:400px;
+            background-color: pink;
+        } */
+         body{
+            background-image: url(./imgLogin/FondoLoginPiedras.jpg);
+            background-repeat: no-repeat;
+            background-repeat: repeat-y;
+            background-size: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+         }
+         #loginForm{
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.2); /* fondo semitransparente */
+            border: 5px solid rgba(255, 255, 255, 0.3); /* borde suave */
+            border-radius: 30px;
+            padding: 40px;
+            width: 300px;
+            backdrop-filter: blur(10px);      
+            -webkit-backdrop-filter: blur(10px); 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+         }
+         /* .formulario{
+            display: flex;
+            justify-content: end;
+         } */
+    </style>
+</head>
+<body>
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form id="formulario">
+            <input type="text" id="username" placeholder="Nombre de usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <br>
+            <button type="submit">Entrar</button>
+            <p id="error-msg" style="color: red;"></p>
+        </form>
+
+
+    </div>
+    
+</body>
+</html>

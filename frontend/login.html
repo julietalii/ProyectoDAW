@@ -55,17 +55,22 @@
           button{
             height: 50px;
             border:none;
-            background-color: blanchedalmond;
+            background-color: rgb(184, 196, 128);
+            color: white;
             border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
           }
-          @media(max-width:912px){
+          /* @media(max-width:912px){
             #loginForm{
                 position:relative;
                 top:300px;
             }
+          } */
+          p, #create a{
+            color:white;
           }
+         
     </style>
 </head>
 <body>
@@ -76,9 +81,11 @@
             <input type="password" id="password" placeholder="Contraseña" required>
             <br>
             <button type="submit">Login</button>
+            <!-- colores pa login: darksalmon, tomato, sandybrown -->
             <p id="error-msg" style="color: red;"></p>
         </form>
-
+        <p>¿Aún no tienes cuenta?</p>
+        <p id="create"><a href="registro.html">Créala aquí</a></p>
 
     </div>
     

@@ -1,0 +1,38 @@
+ #registroForm{
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.2); 
+            border: 3px solid white; 
+            border-radius: 30px;
+            padding: 40px;
+            backdrop-filter: blur(10px);      
+            -webkit-backdrop-filtgiter: blur(10px); 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+         }
+
+.formpart:first-of-type{
+    position: relative;
+    bottom: 50px;
+}
+input:first-of-type{
+    margin-top:0px;
+}
+input{
+    color:white;
+}
+
+input::placeholder{
+    font-size:14px;
+}
+
+label{
+    color:white;
+}
+
+button{
+    width:200px;
+}

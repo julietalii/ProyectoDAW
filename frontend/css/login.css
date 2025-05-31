@@ -1,0 +1,11 @@
+#piedepagina{
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+}
+
+.footer{
+    background-color: white;
+    color: rgba(184, 196, 128);
+   font-weight:500;
+}

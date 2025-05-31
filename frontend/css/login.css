@@ -1,0 +1,22 @@
+ body{
+            background-image: url(./imgLogin/fondoLoginPiedras.jpg);
+            background-repeat: no-repeat;
+            background-repeat: repeat-y;
+            background-size: 100%;
+            /* display: flex;
+           align-items: center; */
+            
+
+         }
+         
+#piedepagina{
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+}
+
+.footer{
+    background-color: white;
+    color: rgba(184, 196, 128);
+   font-weight:500;
+}

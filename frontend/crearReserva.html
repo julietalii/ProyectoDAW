@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Reserva</title>
+  <link rel="stylesheet" href="css/general.css">
+  <script src="https://kit.fontawesome.com/9a8063d980.js" crossorigin="anonymous"></script>
+  <style>
+    
+        body{
+        background: radial-gradient(circle, #96e6a1, #a6c1ee, #96e6a1);
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        color: white;
+    }
+    div.reserva{
+        display: flex;
+        flex-direction: column;
+        width:50%;
+        gap:8px;
+    }
+    
+    select{
+        height: 40px;
+        border-radius: 5px;
+    }
+    
+    button{
+        height: 40px;
+    }
+    p{
+        margin:20px;
+    }
+    h1{
+        margin:100px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Reservar una clase de yoga</h2>
+   <div class="reserva">
+    <label for="clase">Selecciona una clase:</label>
+  <select id="clase"></select>
+
+  <button id="reservarBtn">Reservar</button>
+   </div>
+  
+  <p id="mensaje"></p>
+
+  <div class="atras">
+    <a href="menuLogged.html"><i class="fa-solid fa-arrow-left" style="color: white; font-size: 30px"></i></a>
+    <p>Volver</p>
+</div>
+  <script src="js/crearReserva.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancelar reserva</title>
+  <link rel="stylesheet" href="css/general.css">
+  <script src="https://kit.fontawesome.com/9a8063d980.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial;
+      background: radial-gradient(circle, #96e6a1, #a6c1ee, #96e6a1);
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin:100px;
+    }
+    .reserva {
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      margin-top: 10px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Cancelar una reserva</h1>
+<div id="reservasContainer">Cargando reservas...</div>
+<div class="atras">
+    <a href="menuLogged.html"><i class="fa-solid fa-arrow-left" style="color: black; font-size: 30px"></i></a>
+    <p>Volver</p>
+</div>
+<script src="js/cancelarReserva.js"></script>
+</body>
+</html>

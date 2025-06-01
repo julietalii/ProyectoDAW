@@ -11,23 +11,19 @@ from django.contrib.auth.models import User
 User = get_user_model()
 
 class ReservarClaseAPIView(APIView):
-
     def post(self, request):
         try:
             clase_id = request.data.get('clase_id')
             clase = ClaseYoga.objects.get(id=clase_id)
             usuario = request.user
 
+            # Evitamos que un mismo usuario tengas más de 2 reservas de la misma clase
+            if Reserva.objects.filter(clase=clase, usuario=usuario).exists():
+                return Response({'mensaje': 'Ya tienes una reserva en esta clase'}, status=status.HTTP_400_BAD_REQUEST)
 
             reservas_actuales = Reserva.objects.filter(clase=clase).count()
             if reservas_actuales >= clase.cupo_maximo:
                 return Response({'mensaje': 'No quedan plazas disponibles'}, status=status.HTTP_400_BAD_REQUEST)
-
-
-            hora_reserva = request.data.get('hora')
-            if hora_reserva and str(hora_reserva) != clase.hora.strftime("%H:%M"):
-                return Response({'mensaje': 'Hora no coincide con la clase'}, status=status.HTTP_400_BAD_REQUEST)
-
 
             Reserva.objects.create(clase=clase, usuario=usuario)
             return Response({'mensaje': 'Reserva creada con éxito'}, status=status.HTTP_201_CREATED)

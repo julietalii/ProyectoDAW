@@ -21,12 +21,12 @@ formulario.addEventListener("submit", function(e) {
     })
     .then(data => {
         console.log("Datos recibidos del backend:", data);
-
+        console.log(data);
         localStorage.setItem("usuario_id", data.id);
-
+        console.log(data.id);
         localStorage.setItem("token", data.token); // guardamos token
         localStorage.setItem("username", username); // guardamos nombre de usuario
-        // window.location.href = "menuLogged.html"; 
+        window.location.href = "menuLogged.html"; 
     })
     .catch(error => {
         const errorMsg = document.getElementById("error-msg");

@@ -20,9 +20,13 @@ formulario.addEventListener("submit", function(e) {
         return response.json();
     })
     .then(data => {
+        console.log("Datos recibidos del backend:", data);
+
+        localStorage.setItem("usuario_id", data.id);
+
         localStorage.setItem("token", data.token); // guardamos token
         localStorage.setItem("username", username); // guardamos nombre de usuario
-        window.location.href = "menuLogged.html"; 
+        // window.location.href = "menuLogged.html"; 
     })
     .catch(error => {
         const errorMsg = document.getElementById("error-msg");

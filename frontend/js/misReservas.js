@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const username = localStorage.getItem("username");
+  const usuarioId = localStorage.getItem("usuario_id");
+  console.log("ID guardado en localStorage:", usuarioId); // <- DEBUG
 
-  if (!username) {
+  if (!usuarioId) {
     alert("Usuario no logueado. Redirigiendo al inicio...");
     window.location.href = "login.html";
     return;
   }
 
-  fetch(`http://127.0.0.1:8000/api/mis-reservas/${username}/`, {
+  fetch(`http://127.0.0.1:8000/api/mis-reservas/${usuarioId}/`, {
     method: "GET",
     headers: {
       "Authorization": `Token ${localStorage.getItem("token")}`,

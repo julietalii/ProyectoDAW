@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import ClaseYoga, Reserva, Profesor
 from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -95,6 +96,9 @@ class LoginAPIView(APIView):
         user = authenticate(username=username, password=password)
         if user:
             token, _ = Token.objects.get_or_create(user=user)
+            print("ID? ", user.id)
+            print(" LoginAPIView pasa por aquí")
+
             return Response({
                 'token': token.key,
                 'username': user.username,

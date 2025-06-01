@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path
-from reservas.views import (ReservarClaseAPIView, ListaClasesAPIView, CancelarReservaAPIView, RegistroUsuarioAPIView, LoginAPIView)
+from reservas.views import (ReservarClaseAPIView, ListaClasesAPIView, CancelarReservaAPIView, RegistroUsuarioAPIView, LoginAPIView, ReservasUsuarioAPIView)
 
 
 urlpatterns = [
@@ -28,6 +28,8 @@ urlpatterns = [
     path('api/login/', obtain_auth_token, name='api_token_auth'),
     path('api/register/', RegistroUsuarioAPIView.as_view(), name='registro'),
     path('api/login/', LoginAPIView.as_view(), name='login'),
+    path('api/mis-reservas/<int:user_id>/', ReservasUsuarioAPIView.as_view()),
+
 ]
 
 ##########################################

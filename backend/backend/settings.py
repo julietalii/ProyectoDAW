@@ -115,7 +115,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = 'reservas.Profesor'
+#AUTH_USER_MODEL = 'reservas.Profesor'
 
 
 # Password validation

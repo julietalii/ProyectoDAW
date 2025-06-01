@@ -22,6 +22,5 @@ class Reserva(models.Model):
     def __str__(self):
         return f"{self.usuario.username} reservó {self.clase.nombre}"
 
-class Profesor(AbstractUser):
-    es_profesor = models.BooleanField(default=False)
+
 # Create your models here.

@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/reservar/', ReservarClaseAPIView.as_view(), name='reservar-clase'),
     path('api/clases/', ListaClasesAPIView.as_view(), name='lista-clases'),
     path('api/cancelar-reserva/<int:reserva_id>/', CancelarReservaAPIView.as_view(), name='cancelar-reserva'),
-    path('api/login/', obtain_auth_token, name='api_token_auth'),
+    #path('api/login/', obtain_auth_token, name='api_token_auth'),
     path('api/register/', RegistroUsuarioAPIView.as_view(), name='registro'),
     path('api/login/', LoginAPIView.as_view(), name='login'),
     path('api/mis-reservas/<int:user_id>/', ReservasUsuarioAPIView.as_view()),

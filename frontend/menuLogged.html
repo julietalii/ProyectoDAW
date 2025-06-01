@@ -6,6 +6,9 @@
     <title>Usuario</title>
     <link rel="stylesheet" href="css/general.css">
     <style>
+        body{
+            background: radial-gradient(circle, #96e6a1, #a6c1ee, #96e6a1);
+        }
         .containerMenu{
             position: relative;
             top:200px;
@@ -13,16 +16,60 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            animation: subida 1.8s ease-out;
+          
         }
+
+         @keyframes subida{
+                   0% {
+                        opacity: 0;
+                        transform: translateY(100px); 
+                    }
+                    80%{
+                        opacity: 1;
+                        transform: translateY(-10px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0); 
+                    }
+            
+           }
         .containerMenu div{
             width: 300px;
             height: 150px;
-            background-color: blueviolet;
+            border-radius: 20px;
+            border:3px solid white;
             margin: 10px;
             border-radius: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .containerMenu div a{
+            display: inline-block;
+            color:white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 299px;
+            height: 149px;
+        }
+        .containerMenu div:hover a{
+            color:  #59df6b;
+            transition:0.3s;
+        }
+
+        .containerMenu div:hover{
+            background-color: white;
+            transition:0.3s;
         }
     </style>
 </head>

@@ -98,4 +98,23 @@ class LoginAPIView(APIView):
             return Response({'token': token.key}, status=status.HTTP_200_OK)
         return Response({'error': 'Credenciales inválidas'}, status=status.HTTP_400_BAD_REQUEST)
 
+#####################
+
+class ReservasUsuarioAPIView(APIView):
+    def get(self, request, user_id):
+        reservas = Reserva.objects.filter(usuario_id=user_id)
+
+        if not reservas.exists():
+            return Response({"mensaje": "Este usuario aún no tiene reservas"}, status=status.HTTP_200_OK)
+
+        data = [{
+            "id": r.id,
+            "nombre_clase": r.clase.nombre,
+            "fecha": r.clase.fecha,
+            "hora": r.clase.hora.strftime('%H:%M'),
+        } for r in reservas]
+
+        return Response(data)
+
+
 # Create your views here.

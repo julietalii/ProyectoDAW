@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario</title>
-    
     <link rel="stylesheet" href="css/general.css">
     <style>
         body{
@@ -72,6 +71,36 @@
             background-color: white;
             transition:0.3s;
         }
+
+        .sesionOut{
+            position: absolute;
+            bottom: 10%;
+            right:10%;
+        }
+
+        .sesionOut{
+            width: 150px;
+            height: 75px;
+            border-radius: 15px;
+            border:3px solid white;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sesionOut:hover button{
+            color:white;
+            font-weight: 600;
+        }
+        .sesionOut:hover{
+            background-color: rgba(255, 192, 203, 0);
+            transition: 0.3s;
+        }
+        
+        #logoutBoton{
+            background-color: rgba(255, 192, 203, 0);
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +116,9 @@
           <div>
             <a class="epborrarReserva" href="cancelarReserva.html">Cancelar reserva</a>
         </div>
+    </div>
+    <div class="sesionOut">
+        <button id="logoutBoton">Cerrar sesión</button>
     </div>
     
   <script src="js/menuLogged.js"></script>

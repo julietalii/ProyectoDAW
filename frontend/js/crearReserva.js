@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const claseSelect = document.getElementById("clase");
   const mensaje = document.getElementById("mensaje");
 
-  // Cargamos las clases qu e están disponibles 
+  // Cargamos las clases que están disponibles 
   fetch("http://127.0.0.1:8000/api/clases/", {
     headers: {
       "Authorization": `Token ${token}`
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .then(res => res.json())
     .then(data => {
+      /*Mete cada clase en el select* */
       data.forEach(clase => {
         const option = document.createElement("option");
         option.value = clase.id;
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Creamos reserva
   document.getElementById("reservarBtn").addEventListener("click", () => {
     const claseId = claseSelect.value;
-
+//Llamada al backend, al endpoint de crear reserva
     fetch("http://127.0.0.1:8000/api/reservar/", {
       method: "POST",
       headers: {

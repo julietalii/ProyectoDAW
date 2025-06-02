@@ -1,14 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //Almacena en variable form la etiqueta con id registroForm
   const form = document.getElementById("registroForm");
-
+ //Añade un evento para cuando le das al botón submit del form
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-
+/*Obtiene los valores que introdujo el usuario */
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const email = document.getElementById("email").value;
     const es_profesor = document.getElementById("es_profesor").checked;
 
+    /*Llama al endpoint de registrar usuario */
     fetch("http://127.0.0.1:8000/api/register/", {
       method: "POST",
       headers: {
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(data => {
+      //Si todo fue bien, se registra y te redirije al login
       alert("Listo! Ahora puedes iniciar sesión.");
       window.location.href = "login.html";
     })

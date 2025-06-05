@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data.forEach(clase => {
         const option = document.createElement("option");
         option.value = clase.id;
-        option.textContent = `${clase.nombre} - ${clase.fecha} a las ${clase.hora}`;
+        option.textContent = `${clase.nombre} - ${clase.fecha}`;
         claseSelect.appendChild(option);
       });
     });

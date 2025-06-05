@@ -72,12 +72,9 @@
             transition: transform 0.8s ease-in-out;
           }
 
-          /* @media(max-width:912px){
-            #loginForm{
-                position:relative;
-                top:300px;
-            }
-          } */
+          div#piedepagina{
+            bottom: initial;
+          }
           p, #create a{
             color:white;
           }
